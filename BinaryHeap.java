@@ -24,7 +24,7 @@ class BinaryHeap  {
 
     public int removeMin(Array[] a) {
         int n = a.length();
-        int x = a[0]; //minste ligger alltid "overst", denne returnerer vi gjerne
+        int rot = a[0]; //minste ligger alltid "overst", denne returnerer vi gjerne
         a[0] = a[n-1];
         int i = 0;
         while ((2*i + 2) < n - 1) { //dersom indeks hoyre subtres rotnode er mindre enn lengden pa listen
@@ -39,7 +39,7 @@ class BinaryHeap  {
                 i = j;
                 continue; //hopper opp i while-loopen igjen.
             }
-            break; //bryter helt ut av while-loopen
+            break; //bryter helt ut av while-loopen dersom ingen barn er mindre
         }
 
         //vi maa til slutt sorge for at venstre nodebarn
@@ -49,6 +49,6 @@ class BinaryHeap  {
             a[i] = a[2*i + 1];
             a[2*i + 1] = temp;
         }
-        return x;
+        return rot;
     }
 }

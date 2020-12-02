@@ -19,7 +19,7 @@ class HuffmanTree {
     public Node huffman(Array[] c) {
         PriorityQueue pq = new PriorityQueue();
 
-//For hver tple
+//For hver tuple
         for (tuple t in c) {
             pq.add(new Node(t.symbol, t.freq, null, null)); //hver node i ko har ingen barn
         }
